@@ -1,0 +1,28 @@
+[package]
+name = "select_all_ordered"
+version = "1.0.0"
+edition = "2021"
+authors = ["Felix Selter felixselterdeveloping@gmail.com"]
+description = "Library for processing asynchronous futures in parallel while preserving their original order. Useful when you need to handle multiple futures concurrently but require the results to be returned in the sequence they were submitted."
+license = "MIT"
+license-file = "LICENSE"
+repository = "https://github.com/FelixSelter/select_all_ordered-rust"
+documentation = "https://docs.rs/select_all_ordered"
+keywords = ["futures", "parallel", "ordered", "asynchronous", "select_all"]
+categories = ["async", "concurrency"]
+
+
+[dependencies]
+futures = "0.3.30"
+
+[dev-dependencies]
+# Only for examples
+futures = { version = "0.3.30", features = ["thread-pool"] }
+
+[package.metadata.docs.rs]
+cargo-args = ["-Zunstable-options", "-Zrustdoc-scrape-examples"]
+
+[[example]]
+name = "video_encoding"
+src = "examples/video_encoding.rs"
+doc-scrape-examples = true
