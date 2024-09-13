@@ -11,6 +11,10 @@
 //! - `select_all_ordered_stream`: Returns an asynchronous stream that yields future results in the
 //!   order they were provided, processing futures in parallel and providing control over the maximum
 //!   concurrency.
+//!
+//! This library provides basically the exact same functionality as https://docs.rs/futures/0.1.25/futures/stream/struct.FuturesOrdered.html
+//! However I believe that this implementation is better because FuturesOrdered uses FuturesUnordered under the hood.
+//! Therefore the results are returned in the correct order but not executed in the most performant order
 
 use std::{collections::HashMap, fmt::Debug, future::Future, pin::Pin, task::Poll};
 
