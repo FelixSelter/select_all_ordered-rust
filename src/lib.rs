@@ -11,14 +11,6 @@
 //! - `select_all_ordered_stream`: Returns an asynchronous stream that yields future results in the
 //!   order they were provided, processing futures in parallel and providing control over the maximum
 //!   concurrency.
-//!
-//! ## Features
-//! - **Ordered Results**: Even if futures complete out of order, results are returned in the order
-//!   they were submitted.
-//! - **Parallelism Control**: Specify the maximum number of futures to process in parallel. Useful
-//!   for controlling system resources.
-//! - **Ordered Execution**: The first futures are guaranteed to be polled to completion first
-//! - **Asynchronous Streams**: Stream support to handle multiple futures efficiently over time.
 
 use std::{collections::HashMap, fmt::Debug, future::Future, pin::Pin, task::Poll};
 
